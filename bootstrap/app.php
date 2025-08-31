@@ -32,7 +32,12 @@ $container->singleton(Database::class, function() use ($app) {
     if (!$config) {
         throw new Exception('Database configuration not found');
     }
-    return new Database($config['connections'][$config['default']]);
+    $database = new Database($config['connections'][$config['default']]);
+    
+    // Set database instance for Model class
+    \Kurama\Core\Model::setDatabase($database);
+    
+    return $database;
 });
 
 $container->singleton(View::class, function() use ($app) {
