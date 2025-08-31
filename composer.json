@@ -1,0 +1,34 @@
+{
+    "name": "mervy/qoder-project-one-php-mvc",
+    "description": "Custom PHP Framework with MVC Architecture and Dependency Injection",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mr. Web",
+            "email": "webdesigner@gkult.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kurama\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
