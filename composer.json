@@ -12,7 +12,10 @@
     "autoload": {
         "psr-4": {
             "Kurama\\": "src/"
-        }
+        },
+        "files": [
+            "src/Core/Environment.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
