@@ -123,24 +123,3 @@ class Environment
         return $value;
     }
 }
-
-/**
- * Global environment helper function
- * 
- * @param string $key Environment variable name
- * @param mixed $default Default value
- * @return mixed
- */
-function env(string $key, $default = null)
-{
-    static $environment = null;
-    
-    if ($environment === null) {
-        $environment = new Environment();
-        if (defined('BASE_PATH')) {
-            $environment->load(BASE_PATH . '/.env');
-        }
-    }
-    
-    return $environment->get($key, $default);
-}

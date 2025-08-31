@@ -16,9 +16,17 @@ use Kurama\Core\Database;
 use Kurama\Core\Router;
 use Kurama\Core\View;
 
-// Load environment variables
+// Load environment variables first to make env() function available
 $env = new Environment();
 $env->load(BASE_PATH . '/.env');
+
+// Make env() function globally available
+if (!function_exists('env')) {
+    function env(string $key, $default = null) {
+        global $env;
+        return $env->get($key, $default);
+    }
+}
 
 // Create application instance
 $app = new Application(BASE_PATH);
